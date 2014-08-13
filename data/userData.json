@@ -1,0 +1,1600 @@
+[
+    {
+        "name": "User 99",
+        "user_id": 99,
+        "time_purchased": 1373250607000,
+        "zipcode": "72757",
+        "products": [
+            "RFID",
+            "GPS",
+            "Relay",
+            "IR",
+            "Ambiant",
+            "GPRS/SIM"
+        ]
+    },
+    {
+        "name": "User 98",
+        "user_id": 98,
+        "time_purchased": 1370568880000,
+        "zipcode": "57714",
+        "products": [
+            "Accelerometer",
+            "Servo",
+            "Accelerometer",
+            "Servo",
+            "GPS"
+        ]
+    },
+    {
+        "name": "User 97",
+        "user_id": 97,
+        "time_purchased": 1380185892000,
+        "zipcode": "00647",
+        "products": [
+            "Servo",
+            "BLE",
+            "Ambiant",
+            "Tessel"
+        ]
+    },
+    {
+        "name": "User 96",
+        "user_id": 96,
+        "time_purchased": 1358594577000,
+        "zipcode": "40258",
+        "products": [
+            "Relay",
+            "Accelerometer",
+            "RFID",
+            "GPS",
+            "NRF",
+            "Ambiant",
+            "MicroSD",
+            "IR",
+            "Audio",
+            "Relay"
+        ]
+    },
+    {
+        "name": "User 95",
+        "user_id": 95,
+        "time_purchased": 1345494543000,
+        "zipcode": "83202",
+        "products": [
+            "GPRS/SIM",
+            "Climate"
+        ]
+    },
+    {
+        "name": "User 94",
+        "user_id": 94,
+        "time_purchased": 1348280727000,
+        "zipcode": "60912",
+        "products": [
+            "BLE",
+            "Tessel",
+            "Accelerometer",
+            "Audio",
+            "Camera"
+        ]
+    },
+    {
+        "name": "User 93",
+        "user_id": 93,
+        "time_purchased": 1341482142000,
+        "zipcode": "51570",
+        "products": [
+            "Ambiant",
+            "GPRS/SIM",
+            "IR",
+            "BLE",
+            "Tessel",
+            "RFID",
+            "Relay",
+            "Servo",
+            "Audio",
+            "MicroSD",
+            "Servo",
+            "Audio",
+            "IR",
+            "Climate"
+        ]
+    },
+    {
+        "name": "User 92",
+        "user_id": 92,
+        "time_purchased": 1355085842000,
+        "zipcode": "14132",
+        "products": [
+            "Tessel",
+            "NRF",
+            "NRF",
+            "Relay",
+            "Tessel",
+            "GPRS/SIM",
+            "MicroSD",
+            "Climate",
+            "Servo",
+            "GPS",
+            "Accelerometer",
+            "RFID",
+            "Ambiant"
+        ]
+    },
+    {
+        "name": "User 91",
+        "user_id": 91,
+        "time_purchased": 1391454967000,
+        "zipcode": "95686",
+        "products": [
+            "GPRS/SIM",
+            "GPS",
+            "Accelerometer",
+            "Tessel",
+            "GPS"
+        ]
+    },
+    {
+        "name": "User 90",
+        "user_id": 90,
+        "time_purchased": 1403227708000,
+        "zipcode": "63462",
+        "products": [
+            "MicroSD",
+            "NRF",
+            "Climate",
+            "GPS",
+            "BLE"
+        ]
+    },
+    {
+        "name": "User 89",
+        "user_id": 89,
+        "time_purchased": 1348276863000,
+        "zipcode": "97823",
+        "products": [
+            "Ambiant",
+            "GPRS/SIM",
+            "Camera",
+            "Camera"
+        ]
+    },
+    {
+        "name": "User 88",
+        "user_id": 88,
+        "time_purchased": 1389738799000,
+        "zipcode": "38851",
+        "products": [
+            "Camera",
+            "Ambiant",
+            "RFID",
+            "Climate"
+        ]
+    },
+    {
+        "name": "User 87",
+        "user_id": 87,
+        "time_purchased": 1337029999000,
+        "zipcode": "14083",
+        "products": [
+            "BLE"
+        ]
+    },
+    {
+        "name": "User 86",
+        "user_id": 86,
+        "time_purchased": 1385451572000,
+        "zipcode": "37075",
+        "products": [
+            "Climate",
+            "BLE",
+            "GPRS/SIM",
+            "Camera",
+            "GPS",
+            "Servo",
+            "GPRS/SIM",
+            "IR",
+            "Relay"
+        ]
+    },
+    {
+        "name": "User 85",
+        "user_id": 85,
+        "time_purchased": 1378404967000,
+        "zipcode": "25251",
+        "products": [
+            "Climate",
+            "BLE",
+            "BLE",
+            "Accelerometer",
+            "NRF",
+            "Climate",
+            "Servo"
+        ]
+    },
+    {
+        "name": "User 84",
+        "user_id": 84,
+        "time_purchased": 1338680871000,
+        "zipcode": "76557",
+        "products": [
+            "Relay",
+            "Tessel",
+            "GPS"
+        ]
+    },
+    {
+        "name": "User 83",
+        "user_id": 83,
+        "time_purchased": 1352861256000,
+        "zipcode": "01340",
+        "products": [
+            "Servo",
+            "GPRS/SIM",
+            "NRF",
+            "MicroSD",
+            "Accelerometer",
+            "Camera",
+            "Camera",
+            "BLE",
+            "Audio",
+            "Climate",
+            "Servo",
+            "MicroSD",
+            "RFID",
+            "GPS"
+        ]
+    },
+    {
+        "name": "User 82",
+        "user_id": 82,
+        "time_purchased": 1348745298000,
+        "zipcode": "58053",
+        "products": [
+            "Ambiant",
+            "Relay",
+            "MicroSD",
+            "BLE",
+            "Relay",
+            "MicroSD",
+            "Servo",
+            "NRF",
+            "NRF",
+            "NRF",
+            "Relay",
+            "IR",
+            "GPS"
+        ]
+    },
+    {
+        "name": "User 81",
+        "user_id": 81,
+        "time_purchased": 1345055497000,
+        "zipcode": "31772",
+        "products": [
+            "Tessel",
+            "Tessel",
+            "GPS",
+            "Relay",
+            "NRF",
+            "GPS",
+            "Relay",
+            "Relay",
+            "IR",
+            "NRF",
+            "BLE",
+            "MicroSD",
+            "Audio",
+            "Climate"
+        ]
+    },
+    {
+        "name": "User 80",
+        "user_id": 80,
+        "time_purchased": 1351713687000,
+        "zipcode": "22954",
+        "products": [
+            "Audio",
+            "Camera",
+            "NRF",
+            "NRF",
+            "Ambiant",
+            "MicroSD",
+            "Accelerometer",
+            "Audio",
+            "Audio",
+            "Servo",
+            "Ambiant"
+        ]
+    },
+    {
+        "name": "User 79",
+        "user_id": 79,
+        "time_purchased": 1336893199000,
+        "zipcode": "18103",
+        "products": [
+            "Camera",
+            "Servo",
+            "Camera",
+            "RFID",
+            "Climate",
+            "GPRS/SIM",
+            "GPS",
+            "Ambiant",
+            "MicroSD",
+            "Audio",
+            "MicroSD"
+        ]
+    },
+    {
+        "name": "User 78",
+        "user_id": 78,
+        "time_purchased": 1359190037000,
+        "zipcode": "43117",
+        "products": [
+            "Ambiant",
+            "Audio",
+            "Relay",
+            "NRF",
+            "IR",
+            "Tessel",
+            "MicroSD",
+            "GPS",
+            "MicroSD"
+        ]
+    },
+    {
+        "name": "User 77",
+        "user_id": 77,
+        "time_purchased": 1329081202000,
+        "zipcode": "55117",
+        "products": [
+            "Tessel",
+            "RFID",
+            "GPS",
+            "Ambiant",
+            "Climate",
+            "NRF",
+            "MicroSD",
+            "Servo",
+            "RFID",
+            "Audio"
+        ]
+    },
+    {
+        "name": "User 76",
+        "user_id": 76,
+        "time_purchased": 1343743440000,
+        "zipcode": "55175",
+        "products": [
+            "MicroSD",
+            "NRF",
+            "GPS",
+            "Ambiant",
+            "NRF",
+            "RFID",
+            "Ambiant",
+            "Tessel",
+            "Camera",
+            "BLE"
+        ]
+    },
+    {
+        "name": "User 75",
+        "user_id": 75,
+        "time_purchased": 1377568562000,
+        "zipcode": "67066",
+        "products": [
+            "GPRS/SIM",
+            "Tessel",
+            "MicroSD",
+            "GPS",
+            "Servo",
+            "Climate"
+        ]
+    },
+    {
+        "name": "User 74",
+        "user_id": 74,
+        "time_purchased": 1395574195000,
+        "zipcode": "68634",
+        "products": [
+            "GPS",
+            "Climate",
+            "Tessel",
+            "NRF",
+            "Servo",
+            "Servo",
+            "RFID",
+            "Ambiant",
+            "BLE",
+            "GPS",
+            "RFID",
+            "Ambiant",
+            "Accelerometer"
+        ]
+    },
+    {
+        "name": "User 73",
+        "user_id": 73,
+        "time_purchased": 1355880450000,
+        "zipcode": "49615",
+        "products": [
+            "Climate",
+            "Camera",
+            "RFID",
+            "Audio",
+            "BLE",
+            "RFID",
+            "Audio",
+            "Ambiant",
+            "Camera",
+            "IR",
+            "GPS"
+        ]
+    },
+    {
+        "name": "User 72",
+        "user_id": 72,
+        "time_purchased": 1404032847000,
+        "zipcode": "72538",
+        "products": [
+            "GPRS/SIM",
+            "GPRS/SIM",
+            "Servo",
+            "Accelerometer",
+            "BLE",
+            "RFID",
+            "Accelerometer",
+            "Camera",
+            "MicroSD",
+            "Climate",
+            "Audio"
+        ]
+    },
+    {
+        "name": "User 71",
+        "user_id": 71,
+        "time_purchased": 1344033078000,
+        "zipcode": "90610",
+        "products": [
+            "Relay",
+            "Camera",
+            "MicroSD",
+            "Relay",
+            "IR",
+            "Ambiant",
+            "RFID",
+            "Audio",
+            "Ambiant",
+            "BLE",
+            "RFID",
+            "Climate"
+        ]
+    },
+    {
+        "name": "User 70",
+        "user_id": 70,
+        "time_purchased": 1357056178000,
+        "zipcode": "15420",
+        "products": [
+            "GPS",
+            "Relay",
+            "NRF",
+            "RFID",
+            "RFID",
+            "Accelerometer",
+            "IR",
+            "Climate",
+            "Accelerometer",
+            "Accelerometer",
+            "Camera",
+            "IR",
+            "IR",
+            "MicroSD"
+        ]
+    },
+    {
+        "name": "User 69",
+        "user_id": 69,
+        "time_purchased": 1343180792000,
+        "zipcode": "02892",
+        "products": [
+            "Ambiant",
+            "Audio",
+            "IR",
+            "BLE",
+            "NRF",
+            "Accelerometer",
+            "BLE"
+        ]
+    },
+    {
+        "name": "User 68",
+        "user_id": 68,
+        "time_purchased": 1328556160000,
+        "zipcode": "78663",
+        "products": [
+            "MicroSD",
+            "Accelerometer",
+            "RFID",
+            "GPRS/SIM",
+            "Ambiant",
+            "Climate",
+            "IR",
+            "RFID"
+        ]
+    },
+    {
+        "name": "User 67",
+        "user_id": 67,
+        "time_purchased": 1356730336000,
+        "zipcode": "84752",
+        "products": [
+            "Climate",
+            "Relay",
+            "GPS",
+            "MicroSD",
+            "Camera"
+        ]
+    },
+    {
+        "name": "User 66",
+        "user_id": 66,
+        "time_purchased": 1355386826000,
+        "zipcode": "50327",
+        "products": [
+            "Relay",
+            "Relay"
+        ]
+    },
+    {
+        "name": "User 65",
+        "user_id": 65,
+        "time_purchased": 1339179716000,
+        "zipcode": "19135",
+        "products": [
+            "Tessel",
+            "IR",
+            "IR",
+            "BLE",
+            "Accelerometer",
+            "NRF",
+            "Servo",
+            "RFID",
+            "Ambiant",
+            "NRF",
+            "Accelerometer"
+        ]
+    },
+    {
+        "name": "User 64",
+        "user_id": 64,
+        "time_purchased": 1370171339000,
+        "zipcode": "37149",
+        "products": [
+            "Tessel",
+            "GPS",
+            "Accelerometer",
+            "BLE",
+            "RFID",
+            "RFID",
+            "Relay",
+            "GPS",
+            "Tessel"
+        ]
+    },
+    {
+        "name": "User 63",
+        "user_id": 63,
+        "time_purchased": 1382901174000,
+        "zipcode": "47172",
+        "products": [
+            "GPS",
+            "Servo",
+            "NRF",
+            "Audio",
+            "MicroSD",
+            "Relay",
+            "MicroSD",
+            "Audio",
+            "Servo",
+            "Accelerometer",
+            "GPRS/SIM",
+            "MicroSD"
+        ]
+    },
+    {
+        "name": "User 62",
+        "user_id": 62,
+        "time_purchased": 1389474064000,
+        "zipcode": "28021",
+        "products": [
+            "GPS",
+            "Camera",
+            "MicroSD",
+            "Camera",
+            "Tessel",
+            "Accelerometer",
+            "Camera",
+            "MicroSD",
+            "GPS",
+            "GPS",
+            "Ambiant",
+            "MicroSD",
+            "Accelerometer",
+            "Accelerometer"
+        ]
+    },
+    {
+        "name": "User 61",
+        "user_id": 61,
+        "time_purchased": 1405627044000,
+        "zipcode": "03805",
+        "products": [
+            "NRF",
+            "RFID",
+            "GPS",
+            "MicroSD",
+            "BLE",
+            "Servo",
+            "IR",
+            "MicroSD"
+        ]
+    },
+    {
+        "name": "User 60",
+        "user_id": 60,
+        "time_purchased": 1367832878000,
+        "zipcode": "46381",
+        "products": [
+            "IR",
+            "Ambiant",
+            "Servo",
+            "IR",
+            "Relay",
+            "Servo",
+            "Servo",
+            "GPS",
+            "MicroSD",
+            "Servo",
+            "Ambiant",
+            "Servo",
+            "BLE",
+            "BLE"
+        ]
+    },
+    {
+        "name": "User 59",
+        "user_id": 59,
+        "time_purchased": 1363488418000,
+        "zipcode": "46552",
+        "products": [
+            "Camera",
+            "Ambiant",
+            "Servo",
+            "Camera",
+            "Climate"
+        ]
+    },
+    {
+        "name": "User 58",
+        "user_id": 58,
+        "time_purchased": 1346719406000,
+        "zipcode": "63041",
+        "products": [
+            "Accelerometer",
+            "Tessel",
+            "NRF",
+            "Ambiant",
+            "Relay",
+            "MicroSD",
+            "Audio"
+        ]
+    },
+    {
+        "name": "User 57",
+        "user_id": 57,
+        "time_purchased": 1388964671000,
+        "zipcode": "72559",
+        "products": [
+            "NRF",
+            "Camera",
+            "IR",
+            "Accelerometer",
+            "Accelerometer",
+            "Tessel",
+            "GPS",
+            "Audio",
+            "Tessel",
+            "GPS",
+            "BLE",
+            "IR"
+        ]
+    },
+    {
+        "name": "User 56",
+        "user_id": 56,
+        "time_purchased": 1389480114000,
+        "zipcode": "28463",
+        "products": [
+            "IR",
+            "BLE",
+            "Camera",
+            "GPS",
+            "NRF"
+        ]
+    },
+    {
+        "name": "User 55",
+        "user_id": 55,
+        "time_purchased": 1372355823000,
+        "zipcode": "03044",
+        "products": [
+            "NRF",
+            "GPRS/SIM",
+            "Climate",
+            "Climate",
+            "RFID",
+            "NRF"
+        ]
+    },
+    {
+        "name": "User 54",
+        "user_id": 54,
+        "time_purchased": 1373444414000,
+        "zipcode": "14437",
+        "products": [
+            "GPS"
+        ]
+    },
+    {
+        "name": "User 53",
+        "user_id": 53,
+        "time_purchased": 1395190883000,
+        "zipcode": "61028",
+        "products": [
+            "MicroSD"
+        ]
+    },
+    {
+        "name": "User 52",
+        "user_id": 52,
+        "time_purchased": 1337539853000,
+        "zipcode": "64431",
+        "products": [
+            "Servo",
+            "Climate",
+            "Audio",
+            "MicroSD"
+        ]
+    },
+    {
+        "name": "User 51",
+        "user_id": 51,
+        "time_purchased": 1402996093000,
+        "zipcode": "49015",
+        "products": [
+            "BLE",
+            "RFID",
+            "Servo"
+        ]
+    },
+    {
+        "name": "User 50",
+        "user_id": 50,
+        "time_purchased": 1329018661000,
+        "zipcode": "95432",
+        "products": [
+            "Ambiant",
+            "Audio",
+            "MicroSD",
+            "NRF",
+            "Servo",
+            "Climate",
+            "Accelerometer",
+            "IR",
+            "MicroSD",
+            "Servo",
+            "Accelerometer",
+            "RFID",
+            "RFID"
+        ]
+    },
+    {
+        "name": "User 49",
+        "user_id": 49,
+        "time_purchased": 1396962869000,
+        "zipcode": "77055",
+        "products": [
+            "GPS",
+            "BLE",
+            "Climate"
+        ]
+    },
+    {
+        "name": "User 48",
+        "user_id": 48,
+        "time_purchased": 1374082013000,
+        "zipcode": "38053",
+        "products": [
+            "GPRS/SIM",
+            "Accelerometer",
+            "Accelerometer",
+            "Relay"
+        ]
+    },
+    {
+        "name": "User 47",
+        "user_id": 47,
+        "time_purchased": 1375342104000,
+        "zipcode": "29055",
+        "products": [
+            "Servo",
+            "IR",
+            "Audio",
+            "RFID",
+            "Servo",
+            "RFID",
+            "BLE",
+            "Tessel",
+            "MicroSD",
+            "Servo",
+            "GPRS/SIM",
+            "Servo"
+        ]
+    },
+    {
+        "name": "User 46",
+        "user_id": 46,
+        "time_purchased": 1406281607000,
+        "zipcode": "97258",
+        "products": [
+            "RFID"
+        ]
+    },
+    {
+        "name": "User 45",
+        "user_id": 45,
+        "time_purchased": 1359872064000,
+        "zipcode": "78563",
+        "products": [
+            "BLE",
+            "MicroSD",
+            "MicroSD",
+            "GPS"
+        ]
+    },
+    {
+        "name": "User 44",
+        "user_id": 44,
+        "time_purchased": 1366846353000,
+        "zipcode": "55343",
+        "products": [
+            "GPS",
+            "Climate",
+            "IR",
+            "GPS",
+            "Tessel",
+            "Camera",
+            "RFID",
+            "Accelerometer",
+            "IR",
+            "GPS",
+            "Camera",
+            "GPRS/SIM",
+            "Accelerometer"
+        ]
+    },
+    {
+        "name": "User 43",
+        "user_id": 43,
+        "time_purchased": 1382219943000,
+        "zipcode": "74003",
+        "products": [
+            "NRF",
+            "MicroSD",
+            "Servo",
+            "RFID",
+            "Accelerometer",
+            "Audio",
+            "RFID",
+            "Ambiant",
+            "Ambiant",
+            "RFID"
+        ]
+    },
+    {
+        "name": "User 42",
+        "user_id": 42,
+        "time_purchased": 1364907222000,
+        "zipcode": "83337",
+        "products": [
+            "IR"
+        ]
+    },
+    {
+        "name": "User 41",
+        "user_id": 41,
+        "time_purchased": 1391957606000,
+        "zipcode": "36010",
+        "products": [
+            "GPRS/SIM",
+            "Camera",
+            "Servo",
+            "RFID",
+            "Camera"
+        ]
+    },
+    {
+        "name": "User 40",
+        "user_id": 40,
+        "time_purchased": 1385036108000,
+        "zipcode": "24132",
+        "products": [
+            "MicroSD",
+            "GPS",
+            "IR",
+            "RFID",
+            "GPRS/SIM",
+            "Tessel",
+            "Climate",
+            "Relay",
+            "Servo",
+            "Ambiant",
+            "Relay",
+            "Relay"
+        ]
+    },
+    {
+        "name": "User 39",
+        "user_id": 39,
+        "time_purchased": 1362374009000,
+        "zipcode": "38703",
+        "products": [
+            "Tessel",
+            "BLE",
+            "Climate"
+        ]
+    },
+    {
+        "name": "User 38",
+        "user_id": 38,
+        "time_purchased": 1393612083000,
+        "zipcode": "76513",
+        "products": [
+            "Climate",
+            "GPRS/SIM",
+            "GPS",
+            "GPS",
+            "Accelerometer",
+            "Tessel",
+            "NRF",
+            "Camera",
+            "BLE"
+        ]
+    },
+    {
+        "name": "User 37",
+        "user_id": 37,
+        "time_purchased": 1330531293000,
+        "zipcode": "28716",
+        "products": [
+            "GPS",
+            "MicroSD",
+            "Camera",
+            "BLE",
+            "GPS",
+            "Camera",
+            "Audio",
+            "GPRS/SIM"
+        ]
+    },
+    {
+        "name": "User 36",
+        "user_id": 36,
+        "time_purchased": 1352163114000,
+        "zipcode": "04357",
+        "products": [
+            "Audio",
+            "MicroSD",
+            "MicroSD",
+            "NRF",
+            "GPRS/SIM",
+            "Servo",
+            "Relay",
+            "Tessel",
+            "Audio",
+            "Relay",
+            "Accelerometer",
+            "Audio"
+        ]
+    },
+    {
+        "name": "User 35",
+        "user_id": 35,
+        "time_purchased": 1358053220000,
+        "zipcode": "80741",
+        "products": [
+            "Ambiant",
+            "BLE",
+            "GPS",
+            "Ambiant",
+            "GPRS/SIM",
+            "Ambiant",
+            "NRF",
+            "Climate",
+            "GPRS/SIM"
+        ]
+    },
+    {
+        "name": "User 34",
+        "user_id": 34,
+        "time_purchased": 1329326328000,
+        "zipcode": "67041",
+        "products": [
+            "Accelerometer",
+            "MicroSD",
+            "Accelerometer",
+            "Camera",
+            "Relay",
+            "Climate",
+            "IR",
+            "Audio",
+            "Servo",
+            "BLE",
+            "IR",
+            "Camera",
+            "Audio",
+            "Tessel"
+        ]
+    },
+    {
+        "name": "User 33",
+        "user_id": 33,
+        "time_purchased": 1370522848000,
+        "zipcode": "04653",
+        "products": [
+            "Relay",
+            "Tessel",
+            "BLE",
+            "Camera",
+            "NRF"
+        ]
+    },
+    {
+        "name": "User 32",
+        "user_id": 32,
+        "time_purchased": 1350882314000,
+        "zipcode": "65284",
+        "products": [
+            "IR",
+            "Ambiant",
+            "Accelerometer",
+            "Audio",
+            "BLE",
+            "Servo",
+            "MicroSD",
+            "BLE",
+            "Audio",
+            "BLE",
+            "Ambiant",
+            "Audio",
+            "Tessel"
+        ]
+    },
+    {
+        "name": "User 31",
+        "user_id": 31,
+        "time_purchased": 1340583727000,
+        "zipcode": "63304",
+        "products": [
+            "Tessel",
+            "GPRS/SIM",
+            "Relay",
+            "MicroSD",
+            "Servo",
+            "Camera"
+        ]
+    },
+    {
+        "name": "User 30",
+        "user_id": 30,
+        "time_purchased": 1360645205000,
+        "zipcode": "88510",
+        "products": [
+            "Servo",
+            "Tessel",
+            "Audio",
+            "Accelerometer",
+            "Ambiant",
+            "NRF",
+            "NRF",
+            "GPRS/SIM",
+            "GPRS/SIM",
+            "IR",
+            "NRF",
+            "Ambiant",
+            "Camera"
+        ]
+    },
+    {
+        "name": "User 29",
+        "user_id": 29,
+        "time_purchased": 1345083657000,
+        "zipcode": "53744",
+        "products": [
+            "Camera",
+            "Relay",
+            "Relay",
+            "Relay",
+            "BLE",
+            "Climate",
+            "NRF"
+        ]
+    },
+    {
+        "name": "User 28",
+        "user_id": 28,
+        "time_purchased": 1327060261000,
+        "zipcode": "38150",
+        "products": [
+            "Camera",
+            "Tessel",
+            "GPS",
+            "GPS",
+            "Servo",
+            "Relay"
+        ]
+    },
+    {
+        "name": "User 27",
+        "user_id": 27,
+        "time_purchased": 1352560353000,
+        "zipcode": "95442",
+        "products": [
+            "Camera",
+            "Camera",
+            "Relay",
+            "Camera",
+            "Servo",
+            "IR",
+            "Relay",
+            "Tessel",
+            "Accelerometer",
+            "Ambiant",
+            "Relay",
+            "Servo"
+        ]
+    },
+    {
+        "name": "User 26",
+        "user_id": 26,
+        "time_purchased": 1355107125000,
+        "zipcode": "37237",
+        "products": [
+            "Climate",
+            "Accelerometer",
+            "Relay"
+        ]
+    },
+    {
+        "name": "User 25",
+        "user_id": 25,
+        "time_purchased": 1396826256000,
+        "zipcode": "36028",
+        "products": [
+            "Relay",
+            "Climate",
+            "NRF",
+            "MicroSD",
+            "Servo",
+            "Tessel",
+            "GPRS/SIM",
+            "Climate",
+            "GPRS/SIM",
+            "Tessel",
+            "RFID",
+            "Camera",
+            "Tessel",
+            "Relay"
+        ]
+    },
+    {
+        "name": "User 24",
+        "user_id": 24,
+        "time_purchased": 1326228291000,
+        "zipcode": "57010",
+        "products": [
+            "GPRS/SIM",
+            "Tessel",
+            "Accelerometer",
+            "Audio",
+            "RFID",
+            "RFID",
+            "Relay",
+            "Climate",
+            "GPS"
+        ]
+    },
+    {
+        "name": "User 23",
+        "user_id": 23,
+        "time_purchased": 1389556254000,
+        "zipcode": "70519",
+        "products": [
+            "Ambiant",
+            "Climate",
+            "GPS",
+            "Audio",
+            "Servo",
+            "Climate",
+            "Tessel",
+            "Ambiant",
+            "IR",
+            "Servo",
+            "Camera",
+            "NRF"
+        ]
+    },
+    {
+        "name": "User 22",
+        "user_id": 22,
+        "time_purchased": 1372014728000,
+        "zipcode": "25517",
+        "products": [
+            "Climate",
+            "Servo",
+            "Ambiant",
+            "Servo",
+            "Servo",
+            "Audio",
+            "Servo",
+            "GPS"
+        ]
+    },
+    {
+        "name": "User 21",
+        "user_id": 21,
+        "time_purchased": 1391238428000,
+        "zipcode": "78691",
+        "products": [
+            "Ambiant",
+            "Audio",
+            "IR",
+            "GPS",
+            "GPRS/SIM",
+            "NRF",
+            "Ambiant",
+            "GPS",
+            "BLE"
+        ]
+    },
+    {
+        "name": "User 20",
+        "user_id": 20,
+        "time_purchased": 1353585016000,
+        "zipcode": "47971",
+        "products": [
+            "Camera",
+            "RFID",
+            "Climate",
+            "BLE",
+            "Tessel",
+            "Audio"
+        ]
+    },
+    {
+        "name": "User 19",
+        "user_id": 19,
+        "time_purchased": 1405422103000,
+        "zipcode": "49544",
+        "products": [
+            "NRF",
+            "Servo",
+            "GPRS/SIM",
+            "Camera",
+            "GPRS/SIM",
+            "Accelerometer",
+            "MicroSD",
+            "Camera",
+            "Climate",
+            "Tessel",
+            "Audio"
+        ]
+    },
+    {
+        "name": "User 18",
+        "user_id": 18,
+        "time_purchased": 1370438508000,
+        "zipcode": "58379",
+        "products": [
+            "Servo",
+            "Audio",
+            "NRF",
+            "Ambiant",
+            "GPRS/SIM",
+            "MicroSD",
+            "GPRS/SIM",
+            "Audio",
+            "Camera",
+            "RFID",
+            "BLE",
+            "GPS",
+            "Audio",
+            "Camera"
+        ]
+    },
+    {
+        "name": "User 17",
+        "user_id": 17,
+        "time_purchased": 1380166486000,
+        "zipcode": "10571",
+        "products": [
+            "GPRS/SIM"
+        ]
+    },
+    {
+        "name": "User 16",
+        "user_id": 16,
+        "time_purchased": 1371917868000,
+        "zipcode": "42031",
+        "products": [
+            "Tessel",
+            "Relay",
+            "Ambiant",
+            "RFID",
+            "GPRS/SIM",
+            "IR",
+            "IR",
+            "Servo",
+            "RFID"
+        ]
+    },
+    {
+        "name": "User 15",
+        "user_id": 15,
+        "time_purchased": 1402005010000,
+        "zipcode": "93120",
+        "products": [
+            "IR",
+            "MicroSD",
+            "IR",
+            "Accelerometer",
+            "BLE",
+            "Accelerometer",
+            "Accelerometer",
+            "Tessel",
+            "GPRS/SIM",
+            "MicroSD",
+            "IR",
+            "MicroSD"
+        ]
+    },
+    {
+        "name": "User 14",
+        "user_id": 14,
+        "time_purchased": 1394312223000,
+        "zipcode": "92423",
+        "products": [
+            "Ambiant",
+            "BLE",
+            "Tessel",
+            "Relay",
+            "GPS",
+            "BLE",
+            "Ambiant",
+            "Servo",
+            "MicroSD",
+            "IR",
+            "Accelerometer"
+        ]
+    },
+    {
+        "name": "User 13",
+        "user_id": 13,
+        "time_purchased": 1340599361000,
+        "zipcode": "75255",
+        "products": [
+            "Audio",
+            "Camera",
+            "Servo",
+            "IR",
+            "Climate",
+            "BLE"
+        ]
+    },
+    {
+        "name": "User 12",
+        "user_id": 12,
+        "time_purchased": 1385699591000,
+        "zipcode": "95011",
+        "products": [
+            "Servo",
+            "Accelerometer",
+            "GPS",
+            "Tessel"
+        ]
+    },
+    {
+        "name": "User 11",
+        "user_id": 11,
+        "time_purchased": 1385806811000,
+        "zipcode": "76950",
+        "products": [
+            "IR",
+            "Relay",
+            "MicroSD",
+            "Ambiant",
+            "GPRS/SIM",
+            "Climate",
+            "Accelerometer",
+            "GPRS/SIM",
+            "Audio",
+            "Servo",
+            "MicroSD"
+        ]
+    },
+    {
+        "name": "User 10",
+        "user_id": 10,
+        "time_purchased": 1375918647000,
+        "zipcode": "70460",
+        "products": [
+            "MicroSD",
+            "Relay",
+            "Camera",
+            "GPRS/SIM",
+            "BLE",
+            "GPRS/SIM"
+        ]
+    },
+    {
+        "name": "User 9",
+        "user_id": 9,
+        "time_purchased": 1398562237000,
+        "zipcode": "94060",
+        "products": [
+            "Servo",
+            "GPS",
+            "MicroSD",
+            "RFID",
+            "Audio",
+            "Tessel",
+            "Audio",
+            "Tessel",
+            "Camera",
+            "Climate",
+            "IR"
+        ]
+    },
+    {
+        "name": "User 8",
+        "user_id": 8,
+        "time_purchased": 1357966496000,
+        "zipcode": "62667",
+        "products": [
+            "GPRS/SIM",
+            "Climate",
+            "Servo"
+        ]
+    },
+    {
+        "name": "User 7",
+        "user_id": 7,
+        "time_purchased": 1368870260000,
+        "zipcode": "61814",
+        "products": [
+            "BLE",
+            "Servo",
+            "IR"
+        ]
+    },
+    {
+        "name": "User 6",
+        "user_id": 6,
+        "time_purchased": 1343783063000,
+        "zipcode": "05655",
+        "products": [
+            "Accelerometer",
+            "GPS",
+            "BLE",
+            "Audio",
+            "GPRS/SIM",
+            "GPRS/SIM",
+            "MicroSD",
+            "Servo",
+            "Servo",
+            "RFID",
+            "NRF"
+        ]
+    },
+    {
+        "name": "User 5",
+        "user_id": 5,
+        "time_purchased": 1358406961000,
+        "zipcode": "55403",
+        "products": [
+            "Relay",
+            "Tessel",
+            "Tessel",
+            "Relay",
+            "Ambiant",
+            "Accelerometer",
+            "MicroSD",
+            "MicroSD"
+        ]
+    },
+    {
+        "name": "User 4",
+        "user_id": 4,
+        "time_purchased": 1366503649000,
+        "zipcode": "80019",
+        "products": [
+            "GPRS/SIM",
+            "Ambiant",
+            "Accelerometer",
+            "Climate",
+            "Servo",
+            "Servo",
+            "BLE"
+        ]
+    },
+    {
+        "name": "User 3",
+        "user_id": 3,
+        "time_purchased": 1396684654000,
+        "zipcode": "65334",
+        "products": [
+            "Accelerometer",
+            "RFID",
+            "Tessel",
+            "Relay",
+            "RFID",
+            "GPRS/SIM"
+        ]
+    },
+    {
+        "name": "User 2",
+        "user_id": 2,
+        "time_purchased": 1387996381000,
+        "zipcode": "23883",
+        "products": [
+            "MicroSD",
+            "Audio",
+            "Tessel",
+            "NRF"
+        ]
+    },
+    {
+        "name": "User 1",
+        "user_id": 1,
+        "time_purchased": 1400389031000,
+        "zipcode": "92557",
+        "products": [
+            "BLE",
+            "Servo",
+            "BLE",
+            "Climate",
+            "Servo",
+            "Camera",
+            "BLE",
+            "GPS",
+            "Accelerometer",
+            "Relay"
+        ]
+    },
+    {
+        "name": "User 0",
+        "user_id": 0,
+        "time_purchased": 1380262456000,
+        "zipcode": "77079",
+        "products": [
+            "BLE",
+            "NRF",
+            "MicroSD",
+            "Climate"
+        ]
+    }
+]
