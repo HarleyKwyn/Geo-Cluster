@@ -6,6 +6,9 @@ Cluster data based on geo-location. Includes Filtering options.
 ##Technical Choices
     Chose to use angular for modularity purposes and I had the understanding the angular was used heavily internally.
 
+    Used python script  to convert csv to usable json
+    csvjson --lat "latitude" --lon "longitude" --k "zip" -i 2 src/zipcode.csv > zip.json
+
 ##Angular Architecture.
     There's only a single view so I've decided to omit the use of a router for now. This single view can be ported to any other angular application if you just include the GeoCluster module. :)
 

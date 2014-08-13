@@ -25,9 +25,6 @@
   },
   "homepage": "https://github.com/HarleyKwyn/Geo-Cluster",
   "dependencies": {
-    "angular": "~1.2.21",
-    "angular-bootstrap": "~0.11.0",
-    "bootstrap": "~3.2.0",
     "express": "~4.8.3"
   },
   "devDependencies": {
