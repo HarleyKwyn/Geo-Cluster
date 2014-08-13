@@ -16,7 +16,7 @@ RUN   npm install -g nodemon
 # Install inherits dependency for gulp
 RUN   npm install -g inherits
 # Install Gulp
-RUN   npm install -g gulp
+RUN   npm install gulp
 # Bundle app source
 ADD   . /src
 # Install server dependencies
@@ -26,6 +26,6 @@ RUN   cd /src; npm install
 # Install front-end dependencies
 # RUN   cd /src/public; bower install --allow-root 
 
-EXPOSE  49300:3000
+EXPOSE  49300:8000
 
-CMD cd /src ; npm start
+CMD cd /src ; npm simplehttpServer .
