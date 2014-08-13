@@ -14,7 +14,7 @@ RUN   npm install -g bower
 # Install nodemon
 RUN   npm install -g nodemon
 # Install inherits dependency for gulp
-RUN npm install -g inherits
+RUN   npm install -g inherits
 # Install Gulp
 RUN   npm install -g gulp
 # Bundle app source
