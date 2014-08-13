@@ -5,7 +5,7 @@ angular.module( 'GeoCluster', [
   'GeoClusterGraph'
 ])
 
-.constant('url', 'http://172.12.8.150/')
+.constant('url', 'http://localhost:8000/')
 
 .controller('MainController', [
   '$scope',
@@ -13,7 +13,7 @@ angular.module( 'GeoCluster', [
   function($scope, UserData){
     UserData.success(function(data){
       $scope.userData = data;
-      console.log(data);
+      console.log( data);
     });
     $scope.data = [
       {name: "test1", score: 98},
