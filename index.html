@@ -1,0 +1,44 @@
+<!DOCTYPE:html>
+<html lang="en" ng-app="GeoCluster" ng-controller="MainController">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>Geo-Cluster</title>
+
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script src="./node_modules/angular/lib/angular.js"></script>
+    <script src="./node_modules/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="./scripts/common/angular-d3.js"></script>
+    <script src="./scripts/services/clusterData.js"></script>
+    <script src="./scripts/directives/geoClusterGraph.js"></script>
+    <script src="./scripts/app.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Geo-cluster</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-md-" >
+        <cluster-graph data="data"></cluster-graph>
+      </div>
+    </div><!-- /.container -->
+
+  </body>
+  <footer>
+
+  </footer>
+</html>
