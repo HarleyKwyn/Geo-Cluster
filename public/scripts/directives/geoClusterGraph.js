@@ -1,5 +1,5 @@
-angular.module('GeoClusterGraph',['d3'])
-    .directive('clusterGraph', ['d3', function(d3) {
+angular.module('GeoClusterGraph',['d3','ZipcodeService'])
+    .directive('clusterGraph', ['zipcoords',function(zipcoords) {
       return {
         restrict: 'EA',
         scope: {
@@ -8,9 +8,11 @@ angular.module('GeoClusterGraph',['d3'])
           onClick: "&"
         },
         link: function(scope, iElement, iAttrs) {
+          console.log(topojson)
           var svg = d3.select(iElement[0])
               .append("svg")
-              .attr("width", "100%");
+              .attr("width", "100%")
+              .attr("height", "100%");
 
           // on window resize, re-render d3 canvas
           window.onresize = function() {
@@ -34,45 +36,49 @@ angular.module('GeoClusterGraph',['d3'])
             // remove all previous items before render
             svg.selectAll("*").remove();
 
-            // setup variables
-            var width, height, max;
-            width = d3.select(iElement[0])[0][0].offsetWidth - 20;
-              // 20 is for margins and can be changed
-            height = scope.data.length * 35;
-              // 35 = 30(bar height) + 5(margin between bars)
-            max = 98;
-              // this can also be found dynamically when the data is not static
-              // max = Math.max.apply(Math, _.map(data, ((val)-> val.count)))
+            var projection = d3.geo.mercator();
 
-            // set the height based on the calculations above
-            svg.attr('height', height);
+            var path = d3.geo.path()
+                      .projection(projection);
 
-            //create the rectangles for the bar chart
-            svg.selectAll("rect")
-              .data(data)
-              .enter()
-                .append("rect")
-                .on("click", function(d, i){return scope.onClick({item: d});})
-                .attr("height", 30) // height of each bar
-                .attr("width", 0) // initial width of 0 for transition
-                .attr("x", 10) // half of the 20 side margin specified above
-                .attr("y", function(d, i){
-                  return i * 35;
-                }) // height + margin between bars
-                .transition()
-                  .duration(1000) // time of duration
-                  .attr("width", function(d){
-                    return d.score/(max/width);
-                  }); // width based on scale
+            d3.json("/data/us.json", function(error, topo) { 
+              console.log(error, topo);
+              states = topojson.feature(topo, topo.objects.states).features;
+              // set projection parameters
+              projection
+                .scale(1000)
+                .center([-106, 37.5]);
 
-            svg.selectAll("text")
-              .data(data)
-              .enter()
-                .append("text")
-                .attr("fill", "#fff")
-                .attr("y", function(d, i){return i * 35 + 22;})
-                .attr("x", 15)
-                .text(function(d){return d[scope.label];});
+              // points
+              aa = [-122.490402, 37.786453];
+              bb = [-122.389809, 37.72728];
+
+              console.log(projection(aa),projection(bb));
+
+              // add states from topojson
+              svg.selectAll("path")
+                  .data(states).enter()
+                  .append("path")
+                  .attr("class", "feature")
+                  .style("fill", "steelblue")
+                  .attr("d", path);
+
+                // put boarder around states 
+                svg.append("path")
+                  .datum(topojson.mesh(topo, topo.objects.states, function(a, b) { return a !== b; }))
+                  .attr("class", "state")
+                  .attr("d", path);
+
+                // add circles to svg
+                svg.selectAll("circle")
+                  .data(data).enter()
+                  .append("circle")
+                  .attr("cx", function (d) { console.log(d); return projection(zipcoords[d.zipcode])[0]; })
+                  .attr("cy", function (d) { return projection(zipcoords[d.zipcode])[1]; })
+                  .attr("r", "8px")
+                  .attr("fill", "red")
+
+            });
 
           };
         }
