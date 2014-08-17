@@ -1,25 +1,18 @@
 angular.module('cluster-data', [])
-.factory('kmeans', [function(){
+.factory('kmeans', [ function(){
 
   function Kmeans(data, k, coordsKey){
     this.k = k;
-    this.coordsKey = coordsKey;
+    this.coordsKey = coordsKey ? coordsKey : 'coords';
     this.data = data;
     this.extremes = this.getDataExtremes();
     this.ranges = this.getDataRanges();
     this.means = this.initMeans();
     this.assignments = this.assignCentroids();
-    this.clusters = this.getClusterArray();
-    this.changed = false;
-    this.run();
-  }
-
-  Kmeans.prototype.run = function(){
+    this.clusters = null;
+    this.changed = true;
     this.moveMeans();
-    while(this.changed){
-      this.moveMeans();
-    }
-  };
+  }
 
   Kmeans.prototype.recalculate = function(data, k){
     this.k = k ? data : this.k;
@@ -29,7 +22,7 @@ angular.module('cluster-data', [])
     this.means = this.initMeans();
     this.groups = this.assignCentroids();
     this.clusters = this.getclusterArray();
-    this.run()
+    this.run();
   };
 
   Kmeans.prototype.getDataExtremes = function(){
@@ -43,7 +36,7 @@ angular.module('cluster-data', [])
       //generic for n dimensional data
       for (var dimension in point){
         if ( ! extremes[dimension] ){
-          extremes[dimension] = {min: 1000, max: 0};
+          extremes[dimension] = {min: 1000, max: -1000};
         }
         if (point[dimension] < extremes[dimension].min){
           extremes[dimension].min = point[dimension];
@@ -70,7 +63,7 @@ angular.module('cluster-data', [])
 
   Kmeans.prototype.initMeans = function(){
     var dataExtremes = this.extremes;
-    var dataRanges = this.ranges
+    var dataRanges = this.ranges;
     var k = this.k;
     var data = this.data;
     var means = [];
@@ -121,7 +114,7 @@ angular.module('cluster-data', [])
     var dataRanges = this.ranges;
     var sums = Array( means.length );
     var counts = Array( means.length );
-
+    console.log('moving means');
     for (var i = means.length - 1; i >= 0; i--) {
       counts[i] = 0;
       sums[i] = Array( means[i].length );
@@ -132,7 +125,6 @@ angular.module('cluster-data', [])
     }
 
     for (var point_index = assignments.length - 1; point_index >= 0; point_index--) {
-      var dataRanges = this.ranges;
       var mean_index = assignments[point_index];
       var point = data[point_index];
       var mean = means[mean_index];
@@ -144,7 +136,6 @@ angular.module('cluster-data', [])
     }
 
     for (var mean_index in sums){
-      console.log(counts[mean_index]);
       if ( 0 === counts[mean_index] ){
         sums[mean_index] = means[mean_index];
         // Mean with no points
@@ -163,6 +154,10 @@ angular.module('cluster-data', [])
     //one day replace this with Object.observer ;) ECMAScript6
     if (means.toString() !== sums.toString()){
       this.changed = true;
+      this.moveMeans();
+    }else{
+      this.change = false;
+      this.clusters = this.getClusterArray();
     }
 
     this.means = sums;
@@ -173,8 +168,15 @@ angular.module('cluster-data', [])
     var data = this.data;
     var clusters = {};
     for (var i = data.length - 1; i >= 0; i--) {
-      clusters[assignments[i]] = data[i];
-    };
+      var cluster = clusters[assignments[i]];
+      if(clusters[assignments[i]]){
+        clusters[assignments[i]].push(data[i]);
+      }else{
+        clusters[assignments[i]] = [ data[i] ];
+      }
+    }
+    console.log(clusters);
+    return clusters;
   };
   return Kmeans;
 }]);

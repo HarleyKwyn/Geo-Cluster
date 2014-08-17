@@ -41,7 +41,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8">
-        <div cluster-graph data="data" zoom="zoom"> </div >
+        <div cluster-graph data="data" zoom="zoom" centroids="centroids"> </div >
         </div>
         <div class="col-md-4">
           <div class="panel panel-default">
@@ -49,11 +49,7 @@
               <h1 class="panel-title"> Controls go here</h1>
             </div>
             <div class="panel-body">
-              <div ng-repeat="module in moduleList">
-                <div class="checkbox">
-                  <label> <input type="checkbox"> {{module}} </label>
-                </div>
-              </div>
+              <input ng-model="module"></input>
             <div>
           </div>
         </div>

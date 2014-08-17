@@ -30,15 +30,15 @@ angular.module('data-processing',['zipcode-service'])
       if( time > begin && time < end){
         return true;
       }
-    }
-    return this.by(timeRangeComparator)
+    };
+    return this.by(timeRangeComparator);
   };
   Filter.prototype.invalidZip = function(){
     var invalidZipComparator = function(data){
       if(! data.coords ){
         return true;
       }
-    }
+    };
     return this.by(invalidZipComparator);
   };
   return Filter;
@@ -53,6 +53,27 @@ angular.module('data-processing',['zipcode-service'])
     return data;
   }
   return attachCoords;
+}])
+
+.factory('findExtremes', [function(){
+  function findExtremes(data, key){
+    var extremes = {};
+    for (var i = data.length - 1; i >= 0; i--) {
+      var point = data[i][key];
+      if ( ! extremes.min && ! extreme.max ){
+        extremes.min = 100000000000000;
+        extremes.max = -100000000000000;
+      }
+      if (point < extremes.min){
+        extremes.min = point;
+      }
+      if (point > extremes.max){
+        extremes.max = point;
+      }
+    }
+    return extremes;
+  }
+  return findExtremes;
 }])
 
 ;
