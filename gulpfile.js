@@ -5,9 +5,16 @@ var gulp = require('gulp'),
     nodemon = require('gulp-nodemon');
 
 gulp.task('stylus', function() {
-  gulp.src('stylus/*.stylus')
+  gulp.src('./stylus/*.styl')
     .pipe(less())
-    .pipe(gulp.dest('public/css'));
+    .pipe(gulp.dest('./public/css'));
+});
+
+
+gulp.task('lint', function(){
+  gulp.src('./public/scripts/**/*.js')
+  .pipe(lint())
+  .pipe(lint.reporter('default'));
 });
 
 gulp.task('develop', function () {
@@ -17,12 +24,6 @@ gulp.task('develop', function () {
     .on('restart', function(){
       console.log('restarted');
     }) 
-});
-
-gulp.task('lint', function(){
-  gulp.src('./public/scripts/**/*.js')
-  .pipe(lint())
-  .pipe(lint.reporter('default'));
 });
 
 gulp.task('default', ['stylus', 'lint']);
