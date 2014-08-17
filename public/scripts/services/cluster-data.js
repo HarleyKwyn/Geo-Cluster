@@ -6,7 +6,7 @@ angular.module('cluster-data', [])
     this.coordsKey = coordsKey;
     this.data = data;
     this.extremes = this.getDataExtremes();
-    // this.ranges = this.getDataRanges();
+    this.ranges = this.getDataRanges();
     // this.means = this.initMeans();
     // this.clusters = this.assignCentroids();
     // this.changed = false;
