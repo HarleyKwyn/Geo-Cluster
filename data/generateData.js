@@ -3,7 +3,7 @@ var fs = require('fs');
 
 var outputFilename = './userData.json';
 var numberOfPoints = 100;
-var modules = ["IR", "Accelerometer", "Tessel", "Ambiant", "Audio", "BLE", "Camera", "Climate","GPS","MicroSD", "NRF","Relay","RFID","Servo","GPRS/SIM"]
+var modules = ["IR", "Accelerometer", "Tessel", "Ambient", "Audio", "BLE", "Camera", "Climate","GPS","MicroSD", "NRF","Relay","RFID","Servo","GPRS/SIM"]
 var averageItemsPurchased = 7;
 
 function mockData(){
