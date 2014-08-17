@@ -2,17 +2,22 @@ angular.module('data-processing',['zipcode-service'])
 
 .factory('dataFilter', [function(){
   function Filter(data){
-    this.rawData = data;
+    this.origonalData = data;
     this.filteredData = null;
   }
-  Filter.prototype.contains = function(collection){
-    var contains = {};
-    return false;
+  Filter.prototype.by = function(comparitor){
+    var data = this.origonalData;
+    var filteredData = [];
+    for (var i = data.length - 1; i >= 0; i--) {
+      if( comparitor(data[i], i) ){
+        filteredData.push(data[i]);
+      }
+    }
+    this.filteredData = filteredData;
+    return filteredData;
   };
   Filter.prototype.byModule = function(name){
-    for (var i = users.length - 1; i >= 0; i--) {
-      this.trim(users[i].products);
-    }
+
   };
   Filter.prototype.byTimeRange = function(begin, end){
 
@@ -20,7 +25,7 @@ angular.module('data-processing',['zipcode-service'])
   Filter.prototype.invalidZip = function(){
 
   };
-  return new Filter;
+  return Filter;
 }])
 
 .factory('attachCoords', ['zipcoords', function(zipcoords){

@@ -1,14 +1,13 @@
 var expect = chai.expect;
 
 describe('Module: data-processing', function(){
-  var dataFilter, attachCoords, filter, testData;
+  var dataFilter, attachCoords, filter;
   var injector = angular.injector(['data-processing']);
 
 
   describe('Factory: dataFilter', function(){
 
     beforeEach(function(){
-      testData = ['this', 'is', 'a', 'test'];
       dataFilter = injector.get('dataFilter');
       filter = new dataFilter(testData);
     });
@@ -21,23 +20,79 @@ describe('Module: data-processing', function(){
       expect( filter.origonalData ).to.equal(testData);
     });
 
-    describe('.by to exist', function(){
-      expect()
+    it('should have a .by method', function(){
+      expect( filter.by ).to.be.ok
     });
 
-    describe('.byModule',function(){
-
+    it('should have a .byModule method',function(){
+      expect( filter.byModule ).to.be.ok
     });
-    describe('.byTimeRange', function(){
-      xit('should filter by time_purchased and update dataFilter.filteredData', function(){
+    it('should have a .byTimeRange method', function(){
+      expect( filter.byTimeRange ).to.be.ok
+    });
 
+    it('should have a .invalidZip method', function(){
+      expect( filter.invalidZip ).to.be.ok    
+    });
+
+    describe('.by', function(){
+      var comparator;
+
+      beforeEach(function(){
+        comparator = function(data, index){
+          return index%2;
+        };
+      });
+
+      it('should return an array', function(){
+        expect( Array.isArray(filter.by(comparator)) ).to.be.true
+      });
+      it('should filter by a comparator callback an array', function(){
+        var expectedResults = [
+          {
+              "name": "User 96",
+              "user_id": 96,
+              "time_purchased": 1402266354000,
+              "zipcode": "71431",
+              "products": [
+                  "Accelerometer",
+                  "Climate",
+                  "IR",
+                  "RFID"
+              ]
+          },
+          {
+              "name": "User 98",
+              "user_id": 98,
+              "time_purchased": 1401810136000,
+              "zipcode": "97054",
+              "products": [
+                  "GPRS/SIM",
+                  "GPS",
+                  "BLE",
+                  "RFID",
+                  "Ambient",
+                  "BLE"
+              ]
+          }
+        ]
+
+        expect( filter.by(comparator) ).to.deep.equal(expectedResults)
+      });
+      it('should update dataFilter.filteredData', function(){
+        var origonalFiltered = filter.filteredData;
+        filter.by(comparator);
+        var newFiltered = filter.filteredData;
+        expect(origonalFiltered).to.not.equal(newFiltered)
       });
     });
 
     describe('.invalidZip', function(){
+
       xit('should generate error list for unknown zipcodes', function(){
 
       });
+
     });
 
   });
