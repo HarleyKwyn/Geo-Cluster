@@ -12,11 +12,11 @@ describe('Module: cluster-data', function(){
       expect( typeof kmeans ).to.equal('function');
     });
 
-    it('calculate should recalculate mean',function(){
+    xit('calculate should recalculate mean',function(){
 
     });
 
-    it('should',function(){
+    xit('should',function(){
 
     });
 

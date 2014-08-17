@@ -1,14 +1,16 @@
 var expect = chai.expect;
 
 describe('Module: data-processing', function(){
-  var dataFilter, attachCoords;
+  var dataFilter, attachCoords, filter, testData;
   var injector = angular.injector(['data-processing']);
 
 
   describe('Factory: dataFilter', function(){
 
     beforeEach(function(){
+      testData = ['this', 'is', 'a', 'test'];
       dataFilter = injector.get('dataFilter');
+      filter = new dataFilter(testData);
     });
 
     it('should exist', function(){
@@ -16,27 +18,24 @@ describe('Module: data-processing', function(){
     });
 
     it('should have a data property with original data.', function(){
-      var testData = ['this', 'is', 'a', 'test'];
-      dataFilter(testData);
+      expect( filter.origonalData ).to.equal(testData);
     });
 
-    describe('.contains', function(){
-      it('.contains should return false for found value', function(){
-
-      });
+    describe('.by to exist', function(){
+      expect()
     });
 
     describe('.byModule',function(){
 
     });
     describe('.byTimeRange', function(){
-      it('should filter by time_purchased and update dataFilter.filteredData', function(){
+      xit('should filter by time_purchased and update dataFilter.filteredData', function(){
 
       });
     });
 
     describe('.invalidZip', function(){
-      it('should generate error list for unknown zipcodes', function(){
+      xit('should generate error list for unknown zipcodes', function(){
 
       });
     });
