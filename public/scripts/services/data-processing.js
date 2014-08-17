@@ -25,7 +25,13 @@ angular.module('data-processing',['zipcode-service'])
     return this.by(moduleComparator);
   };
   Filter.prototype.byTimeRange = function(begin, end){
-
+    var timeRangeComparator = function(data){
+      var time = data.time_purchased;
+      if( time > begin && time < end){
+        return true;
+      }
+    }
+    return this.by(timeRangeComparator)
   };
   Filter.prototype.invalidZip = function(){
 

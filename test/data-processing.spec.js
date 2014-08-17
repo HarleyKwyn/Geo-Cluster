@@ -120,7 +120,52 @@ describe('Module: data-processing', function(){
         expect( filter.byModule('Tessel') ).to.deep.equal( correctArray );
       });
     });
-
+    describe('.byTimeRange', function(){
+      var begin = 1401810036000
+      var end = 1404714491000
+      var correctResults = [
+          {
+              "name": "User 96",
+              "user_id": 96,
+              "time_purchased": 1402266354000,
+              "zipcode": "71431",
+              "products": [
+                  "Accelerometer",
+                  "Climate",
+                  "IR",
+                  "RFID"
+              ]
+          },
+          {
+              "name": "User 98",
+              "user_id": 98,
+              "time_purchased": 1401810136000,
+              "zipcode": "97054",
+              "products": [
+                  "GPRS/SIM",
+                  "GPS",
+                  "BLE",
+                  "RFID",
+                  "Ambient",
+                  "BLE"
+              ]
+          },
+          {
+              "name": "User 99",
+              "user_id": 99,
+              "time_purchased": 1404714391000,
+              "zipcode": "MONW",
+              "products": [
+                  "Climate",
+                  "GPS",
+                  "Tessel"
+              ]
+          }
+      ];
+      it('should filter by time range', function(){
+        expect( filter.byTimeRange(begin, end) ).to.deep.equal(correctResults);
+      });
+    })
     describe('.invalidZip', function(){
 
       xit('should generate error list for unknown zipcodes', function(){
