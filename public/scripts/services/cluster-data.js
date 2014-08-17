@@ -5,12 +5,12 @@ angular.module('cluster-data', [])
     this.k = k;
     this.coordsKey = coordsKey;
     this.data = data;
-    this.extremes = this.getExtremes();
-    this.ranges = this.getDataRanges();
-    this.means = this.initMeans();
-    this.clusters = this.assignCentroids();
-    this.changed = false;
-    this.moveMeans();
+    this.extremes = this.getDataExtremes();
+    // this.ranges = this.getDataRanges();
+    // this.means = this.initMeans();
+    // this.clusters = this.assignCentroids();
+    // this.changed = false;
+    // this.moveMeans();
   }
 
   Kmeans.prototype.run = function(){
@@ -18,7 +18,7 @@ angular.module('cluster-data', [])
   };
 
   Kmeans.prototype.calculate = function(){
-    this.extremes = this.getExtremes();
+    this.extremes = this.getDataExtremes();
     this.ranges = this.getDataRanges();
     this.means = this.initMeans();
     this.groups = this.assignCentroids();
@@ -52,7 +52,7 @@ angular.module('cluster-data', [])
 
   Kmeans.prototype.getDataRanges = function(){
     var ranges = [];
-    var extremes = this.extremes();
+    var extremes = this.extremes;
 
     for (var dimension in extremes){
       ranges[dimension] = extremes[dimension].max - extremes[dimension].min;
@@ -62,12 +62,15 @@ angular.module('cluster-data', [])
   };
 
   Kmeans.prototype.initMeans = function(){
+    var dataExtremes = this.extremes;
+    var dataRanges = this.ranges
+    var means = [];
     var k = this.k;
     var data = this.data;
     while (k--){
       var mean = [];
       for (var dimension in dataExtremes){
-        mean[dimension] = dataExtremes[dimension].min + ( Math.random() * dataRange[dimension] );
+        mean[dimension] = dataExtremes[dimension].min + ( Math.random() * dataRanges[dimension] );
       }
       means.push(mean);
     }
@@ -105,6 +108,7 @@ angular.module('cluster-data', [])
   Kmeans.prototype.moveMeans = function(){
     var means = this.means;
     var assignments = this.clusters;
+    var dataExtremes = this.extremes;
     var sums = Array( means.length );
     var counts = Array( means.length );
 
@@ -118,7 +122,8 @@ angular.module('cluster-data', [])
       }
     }
 
-    for (var point_index = asspoint_indexgnments.length - 1; point_index >= 0; point_index--) {
+    for (var point_index = assignments.length - 1; point_index >= 0; point_index--) {
+      var dataRanges = this.ranges;
       var mean_index = assignments[point_index];
       var point = data[point_index];
       var mean = means[mean_index];
@@ -136,7 +141,7 @@ angular.module('cluster-data', [])
         // Mean with no points
 
         for (var dimension in dataExtremes){
-          sums[mean_index][dimension] = dataExtremes[dimension].min + ( Math.random() * dataRange[dimension] );
+          sums[mean_index][dimension] = dataExtremes[dimension].min + ( Math.random() * dataRanges[dimension] );
         }
         continue;
       }
