@@ -34,7 +34,12 @@ angular.module('data-processing',['zipcode-service'])
     return this.by(timeRangeComparator)
   };
   Filter.prototype.invalidZip = function(){
-
+    var invalidZipComparator = function(data){
+      if(! data.coords ){
+        return true;
+      }
+    }
+    return this.by(invalidZipComparator);
   };
   return Filter;
 }])
