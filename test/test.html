@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tests: GeoCluster</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../node_modules/mocha/mocha.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="./../node_modules/mocha/mocha.js"></script>
+    <script src="./../node_modules/chai/chai.js"></script>
+    <script src="./../node_modules/lodash/lodash.js"></script>
+
+    <script>mocha.setup('bdd')</script>
+    <script src="./../node_modules/d3/d3.js"></script>
+    <script src="./../node_modules/topojson/topojson.js"></script>
+    <script src="./../node_modules/angular/lib/angular.js"></script>
+    <script src="./../node_modules/angular-bootstrap/ui-bootstrap.js"></script>
+
+    <script src="./../public/scripts/services/user-data.js"></script>
+    <script src="./../public/scripts/services/cluster-data.js"></script>
+    <script src="./../public/scripts/services/zipcode-service.js"></script>
+    <script src="./../public/scripts/services/data-processing.js"></script>
+    <script src="./../public/scripts/directives/geo-cluster-graph.js"></script>
+    <script src="./../public/scripts/app.js"></script>
+    <script src="main.spec.js"></script>
+    <script src="data-processing.spec.js"></script>
+    <script src="cluster-data.spec.js"></script>
+
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
