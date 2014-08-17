@@ -4,7 +4,6 @@ describe('Module: data-processing', function(){
       attachCoords = injector.get('attachCoords');
   
   before(function(){
-    console.log(testData);
     attachCoords(testData)
   });
 
@@ -79,7 +78,6 @@ describe('Module: data-processing', function(){
       });
       it('should filter by a comparator callback an array', function(){
         var expectedResults = [testData[3], testData[1]]
-        console.log(filter.by(comparator))
         expect( filter.by(comparator) ).to.deep.equal(expectedResults)
       });
       it('should update dataFilter.filteredData', function(){
