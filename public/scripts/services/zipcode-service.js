@@ -1,5 +1,6 @@
-angular.module('ZipcodeService', [])
-
+angular.module('zipcode-service', [])
+    //this can be changed to a request to the back end
+    //though I might make this a node module for other engineers.
 .factory('zipcoords', [function(){
   return {
     "10001": [

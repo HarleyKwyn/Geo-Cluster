@@ -1,0 +1,8 @@
+body {
+  margin-top: 70px;
+}
+.state {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}

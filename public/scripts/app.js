@@ -1,20 +1,26 @@
 angular.module( 'GeoCluster', [
   'ui.bootstrap',
-  'UserData',
-  'GeoClusterGraph'
+  'user-data',
+  'geo-cluster-graph',
+  'data-processing'
 ])
 
-.constant('url', 'http://172.12.8.150/')
+.constant('url', 'http://localhost:8000/')
 
 .controller('MainController', [
   '$scope',
-  'userData',
-  function($scope, UserData){
+  'getData',
+  'dataFilter',
+  function($scope, getData, dataFilter){
+    var rawData = null;
     $scope.data = null;
-    UserData.success(function(data){
+    $scope.zoom = 1;
+
+    getData.success(function(data){
+      rawData = data;
       $scope.data = data;
-      console.log(data);
     });
+
 }])
 
 ;

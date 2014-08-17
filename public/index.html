@@ -10,26 +10,20 @@
 
     <title>Geo-Cluster</title>
 
-    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="./css/index.css" rel="stylesheet"/>
 
-    .state {
-      fill: none;
-      stroke: #fff;
-      stroke-linejoin: round;
-    }
 
-    </style>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="http://d3js.org/topojson.v1.min.js"></script>
-    
+    <script src="./node_modules/d3/d3.js"></script>
+    <script src="./node_modules/topojson/topojson.js"></script>    
     <script src="./node_modules/angular/lib/angular.js"></script>
     <script src="./node_modules/angular-bootstrap/ui-bootstrap.js"></script>
-    <script src="./scripts/common/angular-d3.js"></script>
-    <script src="./scripts/services/userData.js"></script>
-    <script src="./scripts/services/clusterData.js"></script>
-    <script src="./scripts/services/zipcodeService.js"></script>
-    <script src="./scripts/directives/geoClusterGraph.js"></script>
+
+    <script src="./scripts/services/zipcode-service.js"></script>
+    <script src="./scripts/services/user-data.js"></script>
+    <script src="./scripts/services/cluster-data.js"></script>
+    <script src="./scripts/services/data-processing.js"></script>
+    <script src="./scripts/directives/geo-cluster-graph.js"></script>
     <script src="./scripts/app.js"></script>
 
   </head>
@@ -44,9 +38,25 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div cluster-graph data="data"> </div >
+        <div class="col-md-8">
+        <div cluster-graph data="data" zoom="zoom"> </div >
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h1 class="panel-title"> Controls go here</h1>
+            </div>
+            <div class="panel-body">
+              <div ng-repeat="module in moduleList">
+                <div class="checkbox">
+                  <label> <input type="checkbox"> {{module}} </label>
+                </div>
+              </div>
+            <div>
+          </div>
+        </div>
       </div>
     </div><!-- /.container -->
 

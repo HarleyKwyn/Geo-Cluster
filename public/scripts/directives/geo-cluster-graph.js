@@ -1,14 +1,16 @@
-angular.module('GeoClusterGraph',['d3','ZipcodeService'])
-    .directive('clusterGraph', ['zipcoords',function(zipcoords) {
+angular.module('geo-cluster-graph',[])
+    .directive('clusterGraph', [function() {
       return {
         restrict: 'EA',
         scope: {
           data: "=",
+          zoom: "=",
           label: "@",
           onClick: "&"
         },
         link: function(scope, iElement, iAttrs) {
-          console.log(topojson)
+          console.log(iElement);
+          console.log(iAttrs);
           var svg = d3.select(iElement[0])
               .append("svg")
               .attr("width", "100%")
@@ -32,7 +34,7 @@ angular.module('GeoClusterGraph',['d3','ZipcodeService'])
           }, true);
 
           // define render function
-          scope.render = function(data){
+          scope.render = function(data, zoom){
             // remove all previous items before render
             svg.selectAll("*").remove();
 
@@ -47,13 +49,7 @@ angular.module('GeoClusterGraph',['d3','ZipcodeService'])
               // set projection parameters
               projection
                 .scale(1000)
-                .center([-106, 37.5]);
-
-              // points
-              aa = [-122.490402, 37.786453];
-              bb = [-122.389809, 37.72728];
-
-              console.log(projection(aa),projection(bb));
+                .center([-100, 40]);
 
               // add states from topojson
               svg.selectAll("path")
@@ -73,10 +69,10 @@ angular.module('GeoClusterGraph',['d3','ZipcodeService'])
                 svg.selectAll("circle")
                   .data(data).enter()
                   .append("circle")
-                  .attr("cx", function (d) { console.log(d); return projection(zipcoords[d.zipcode])[0]; })
-                  .attr("cy", function (d) { return projection(zipcoords[d.zipcode])[1]; })
+                  .attr("cx", function (d) { return projection(d.coords)[0]; })
+                  .attr("cy", function (d) { return projection(d.coords)[1]; })
                   .attr("r", "8px")
-                  .attr("fill", "red")
+                  .attr("fill", "red");
 
             });
 
