@@ -13,8 +13,8 @@ describe('Module: cluster-data', function(){
 
     beforeEach(function(){
       kmeans = injector.get('kmeans');
-      testKmeans = new kmeans(4, kmeansData, 'coords')
-      smallKmeans = new kmeans(2, testData, 'coords')
+      testKmeans = new kmeans(kmeansData, 4, 'coords')
+      smallKmeans = new kmeans(testData, 2, 'coords')
       console.log(testKmeans);
       console.log(smallKmeans);
     });
@@ -64,8 +64,15 @@ describe('Module: cluster-data', function(){
         expect(first).to.not.deep.equal(second);
       });
     });
-    describe('.calculate', function(){
-      xit('should store getDataExtremes result in kmeans.extremes', function(){
+    describe('.assignCentroids', function(){
+      it('should return an object with index keys and cluster assignments', function(){
+        var results = testKmeans.assignCentroids();
+        expect(Object.keys( testKmeans.assignments ).length ).to.equal(kmeansData.length);
+      });
+    });
+
+    describe('.recalculate', function(){
+      it('should store update values on Kmeans object', function(){
         var extremes = testKmeans.getDataExtremes();
         expect( testKmeans.extremes ).to.deep.equal(extremes);
       });  
