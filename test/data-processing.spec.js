@@ -87,6 +87,40 @@ describe('Module: data-processing', function(){
       });
     });
 
+    describe('.byModule', function(){
+      var correctArray = [
+        {
+            "name": "User 97",
+            "user_id": 97,
+            "time_purchased": 1378874952000,
+            "zipcode": "74023",
+            "products": [
+                "RFID",
+                "Ambient",
+                "Tessel"
+            ]
+        },
+        {
+            "name": "User 99",
+            "user_id": 99,
+            "time_purchased": 1404714391000,
+            "zipcode": "MONW",
+            "products": [
+                "Climate",
+                "GPS",
+                "Tessel"
+            ]
+        }
+      ]
+
+      it('should return empty array for invalid name', function(){
+        expect( filter.byModule('Arduino').length ).to.equal(0);
+      });
+      it('should return correct array for valid name', function(){
+        expect( filter.byModule('Tessel') ).to.deep.equal( correctArray );
+      });
+    });
+
     describe('.invalidZip', function(){
 
       xit('should generate error list for unknown zipcodes', function(){

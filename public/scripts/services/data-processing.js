@@ -5,11 +5,11 @@ angular.module('data-processing',['zipcode-service'])
     this.origonalData = data;
     this.filteredData = null;
   }
-  Filter.prototype.by = function(comparitor){
+  Filter.prototype.by = function(comparator){
     var data = this.origonalData;
     var filteredData = [];
     for (var i = data.length - 1; i >= 0; i--) {
-      if( comparitor(data[i], i) ){
+      if( comparator(data[i], i) ){
         filteredData.push(data[i]);
       }
     }
@@ -17,7 +17,12 @@ angular.module('data-processing',['zipcode-service'])
     return filteredData;
   };
   Filter.prototype.byModule = function(name){
-
+    var moduleComparator = function(data){
+      if(data.products.indexOf(name) > -1){
+        return true;
+      }
+    };
+    return this.by(moduleComparator);
   };
   Filter.prototype.byTimeRange = function(begin, end){
 

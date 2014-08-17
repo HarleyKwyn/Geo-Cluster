@@ -5,10 +5,11 @@ var testData = [
         "name": "User 99",
         "user_id": 99,
         "time_purchased": 1404714391000,
-        "zipcode": "65616",
+        "zipcode": "MONW",
         "products": [
             "Climate",
-            "GPS"
+            "GPS",
+            "Tessel"
         ]
     },
     {
@@ -32,7 +33,8 @@ var testData = [
         "zipcode": "74023",
         "products": [
             "RFID",
-            "Ambient"
+            "Ambient",
+            "Tessel"
         ]
     },
     {
