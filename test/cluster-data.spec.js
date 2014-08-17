@@ -38,6 +38,12 @@ describe('Module: cluster-data', function(){
         expect(smallKmeans.extremes).to.deep.equal(correct);
       });
     });
+    describe('.getDataRanges', function(){
+      it('should calculate ranges correctly', function(){
+        var correct = smallKmeans.extremes[0].max - smallKmeans.extremes[0].min
+        expect(smallKmeans.ranges[0]).to.be.equal(correct);
+      });
+    });
 
   });
 });
