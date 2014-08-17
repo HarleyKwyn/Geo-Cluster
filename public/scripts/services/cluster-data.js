@@ -1,27 +1,35 @@
 angular.module('cluster-data', [])
 .factory('kmeans', [function(){
 
-  function Kmeans(k, data, coordsKey){
+  function Kmeans(data, k, coordsKey){
     this.k = k;
     this.coordsKey = coordsKey;
     this.data = data;
     this.extremes = this.getDataExtremes();
     this.ranges = this.getDataRanges();
     this.means = this.initMeans();
-    this.clusters = this.assignCentroids();
-    // this.changed = false;
-    // this.moveMeans();
+    this.assignments = this.assignCentroids();
+    this.clusters = this.getClusterArray();
+    this.changed = false;
+    this.run();
   }
 
   Kmeans.prototype.run = function(){
     this.moveMeans();
+    while(this.changed){
+      this.moveMeans();
+    }
   };
 
-  Kmeans.prototype.recalculate = function(){
+  Kmeans.prototype.recalculate = function(data, k){
+    this.k = k ? data : this.k;
+    this.data = data ? data : this.data;
     this.extremes = this.getDataExtremes();
     this.ranges = this.getDataRanges();
     this.means = this.initMeans();
     this.groups = this.assignCentroids();
+    this.clusters = this.getclusterArray();
+    this.run()
   };
 
   Kmeans.prototype.getDataExtremes = function(){
@@ -78,6 +86,7 @@ angular.module('cluster-data', [])
   };
 
   Kmeans.prototype.assignCentroids = function() {
+    var mean, difference, sum;
     var data = this.data;
     var means = this.means;
     var coordsKey = this.coordsKey;
@@ -86,12 +95,13 @@ angular.module('cluster-data', [])
       var point = coordsKey ? data[i][coordsKey] : data[i];
       var distances = [];
 
+      //Calculate Cartesian distances with Pythagorean theorem 
       for (var j = means.length - 1; j >= 0; j--) {
-        var mean = means[j];
-        var sum = 0;
+        mean = means[j];
+        sum = 0;
 
         for (var dimension in point){
-          var difference = point[dimension] - mean[dimension];
+          difference = point[dimension] - mean[dimension];
           difference *= difference;
           sum += difference;
         }
@@ -106,12 +116,12 @@ angular.module('cluster-data', [])
 
   Kmeans.prototype.moveMeans = function(){
     var means = this.means;
-    var assignments = this.clusters;
+    var assignments = this.assignments;
     var dataExtremes = this.extremes;
+    var dataRanges = this.ranges;
     var sums = Array( means.length );
     var counts = Array( means.length );
 
-    this.changed = false;
     for (var i = means.length - 1; i >= 0; i--) {
       counts[i] = 0;
       sums[i] = Array( means[i].length );
@@ -142,7 +152,7 @@ angular.module('cluster-data', [])
         for (var dimension in dataExtremes){
           sums[mean_index][dimension] = dataExtremes[dimension].min + ( Math.random() * dataRanges[dimension] );
         }
-        continue;
+        continue; //skip subsequent for loop as no points in
       }
 
       for (var dimension in sums[mean_index]){
@@ -155,8 +165,16 @@ angular.module('cluster-data', [])
       this.changed = true;
     }
 
-    return sums;
+    this.means = sums;
   };
 
+  Kmeans.prototype.getClusterArray = function(){
+    var assignments = this.assignments;
+    var data = this.data;
+    var clusters = {};
+    for (var i = data.length - 1; i >= 0; i--) {
+      clusters[assignments[i]] = data[i];
+    };
+  };
   return Kmeans;
 }]);
