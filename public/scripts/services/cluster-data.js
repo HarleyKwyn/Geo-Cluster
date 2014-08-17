@@ -7,22 +7,21 @@ angular.module('cluster-data', [])
     this.data = data;
     this.extremes = this.getDataExtremes();
     this.ranges = this.getDataRanges();
-    // this.means = this.initMeans();
-    // this.clusters = this.assignCentroids();
+    this.means = this.initMeans();
+    this.clusters = this.assignCentroids();
     // this.changed = false;
     // this.moveMeans();
   }
 
   Kmeans.prototype.run = function(){
-
+    this.moveMeans();
   };
 
-  Kmeans.prototype.calculate = function(){
+  Kmeans.prototype.recalculate = function(){
     this.extremes = this.getDataExtremes();
     this.ranges = this.getDataRanges();
     this.means = this.initMeans();
     this.groups = this.assignCentroids();
-    this.moveMeans();
   };
 
   Kmeans.prototype.getDataExtremes = function(){
@@ -64,9 +63,9 @@ angular.module('cluster-data', [])
   Kmeans.prototype.initMeans = function(){
     var dataExtremes = this.extremes;
     var dataRanges = this.ranges
-    var means = [];
     var k = this.k;
     var data = this.data;
+    var means = [];
     while (k--){
       var mean = [];
       for (var dimension in dataExtremes){
