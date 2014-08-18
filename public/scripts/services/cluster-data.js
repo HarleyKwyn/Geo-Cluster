@@ -16,7 +16,7 @@ angular.module('cluster-data', [])
   }
 
   Kmeans.prototype.recalculate = function(data, k){
-    this.k = k ? data : this.k;
+    this.k = k ? k : this.k;
     this.data = data ? data : this.data;
     this.extremes = this.getDataExtremes();
     this.ranges = this.getDataRanges();
