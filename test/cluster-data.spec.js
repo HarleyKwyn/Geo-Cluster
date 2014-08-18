@@ -13,10 +13,8 @@ describe('Module: cluster-data', function(){
 
     beforeEach(function(){
       kmeans = injector.get('kmeans');
-      testKmeans = new kmeans(kmeansData, 4, 'coords')
-      smallKmeans = new kmeans(testData, 2, 'coords')
+      testKmeans = new kmeans(kmeansData, 4, 100, 'coords');
       console.log(testKmeans);
-      console.log(smallKmeans);
     });
 
     it('should return an function', function(){
@@ -36,16 +34,12 @@ describe('Module: cluster-data', function(){
         expect(testKmeans.extremes[0].min).to.be.defined
         expect(testKmeans.extremes[0].max).to.be.defined
       });
-      it('should have correct max and min for lat and long', function(){
-        var correct = [{max: 0, min: -122.90416}, {max: 45.946314 , min: 31.258681} ]
-        expect(smallKmeans.extremes).to.deep.equal(correct);
-      });
     });
 
     describe('.getDataRanges', function(){
       it('should calculate ranges correctly', function(){
-        var correct = smallKmeans.extremes[0].max - smallKmeans.extremes[0].min
-        expect(smallKmeans.ranges[0]).to.be.equal(correct);
+        var correct = testKmeans.extremes[0].max - testKmeans.extremes[0].min
+        expect(testKmeans.ranges[0]).to.be.equal(correct);
       });
     });
     describe('.initMeans', function(){
