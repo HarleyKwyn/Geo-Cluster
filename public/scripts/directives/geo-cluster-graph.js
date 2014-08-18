@@ -7,7 +7,7 @@ angular.module('geo-cluster-graph',[])
           zoom: "=",
           centroids:"=",
           label: "@",
-          onClick: "&"
+          onClick: "&",
         },
         link: function(scope, iElement, iAttrs) {
           var svg = d3.select(iElement[0])
@@ -31,7 +31,7 @@ angular.module('geo-cluster-graph',[])
 
           // watch for data changes and re-render
           scope.$watch('data', function(newVals, oldVals) {
-            return scope.render(newVals, scope.zoom, scope.centroids);
+              return scope.render(newVals, scope.zoom, scope.centroids);
           }, true);
           scope.$watch('zoom', function(newVal, oldVal) {
             return scope.render(scope.data, newVal, scope.centroids);
@@ -42,6 +42,7 @@ angular.module('geo-cluster-graph',[])
 
           // define render function
           scope.render = function(data, zoom, centroids){
+            if(data.length === 0) return;
             // remove all previous items before render
             svg.selectAll("*").remove();
             //resize hack
@@ -52,43 +53,12 @@ angular.module('geo-cluster-graph',[])
             var path = d3.geo.path()
                       .projection(projection);
 
-            var voronoi = d3.geom.voronoi()
-               .clipExtent([[0, 0], [width, height]]);
-
-            var centroidProjection = [];
-            for (var i = 0; i < centroids.length; i++) {
-              centroidProjection.push( projection(centroids[i]));
-            }
-
-
-
-            function drawClusters(){
-              var voronoiPath = svg.append("g").selectAll("path");
-              voronoiPath = voronoiPath
-                    .data(voronoi(centroidProjection), polygon);
-
-              voronoiPath.exit().remove();
-
-              voronoiPath.enter().append("path")
-                  .attr("class", function(d, i) { return "cluster cluster-"+i })
-                  .attr("d", polygon)
-                  .style("fill",function() {
-                    return "hsl(" + Math.random() * 360 + ",100%,50%)";
-                  })
-
-              voronoiPath.order();
-            };
-
-            function polygon(d){
-                return "M" + d.join("L") + "Z";
-            };
-
             d3.json("/data/us.json", function(error, topo) { 
               states = topojson.feature(topo, topo.objects.states).features;
               // set projection parameters
               projection
-                .scale(width)
-                .center([-90, 40]);
+                .scale(500)
+                .center([-100, 40]);
               // add states from topojson
               svg.selectAll("path")
                   .data(states).enter()
@@ -115,6 +85,37 @@ angular.module('geo-cluster-graph',[])
 
                 drawClusters();
             });
+
+            function drawClusters(){
+              var voronoi = d3.geom.voronoi()
+               .clipExtent([[0, 0], [width, height]]);
+
+              var centroidProjection = [];
+              for (var i = 0; i < centroids.length; i++) {
+                centroidProjection.push( projection(centroids[i]));
+              }
+
+              var voronoiPath = svg.append("g").selectAll("path");
+
+              voronoiPath = voronoiPath
+                    .data(voronoi(centroidProjection), polygon);
+
+              voronoiPath.exit().remove();
+
+              voronoiPath.enter().append("path")
+                  .attr("class", function(d, i) { return "cluster" })
+                  .on("mouseenter", scope.$parent.showCluster )
+                  .attr("d", polygon)
+                  .style("fill",function() {
+                    return "hsl(" + Math.random() * 360 + ",100%,50%)";
+                  })
+
+              voronoiPath.order();
+            };
+
+            function polygon(d){
+                return "M" + d.join("L") + "Z";
+            };
           };
         }
       };
