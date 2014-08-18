@@ -41,16 +41,32 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8">
-        <div cluster-graph data="data" zoom="zoom" centroids="centroids"> </div >
+        <div cluster-graph data="data" zoom="zoom" centroids="centroids" hover="showCluster"> </div >
         </div>
         <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h1 class="panel-title"> Controls go here</h1>
+          <div class = "row">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h1 class="panel-title"> Controls go here</h1>
+              </div>
+              <div class="panel-body">
+                <div ng-show="error" class="error">{{error}}</div>
+                <input ng-model="module"></input>
+                <div class="btn btn-info" ng-click="filter()">Filter by {{module}}</div>
+              </div>
             </div>
-            <div class="panel-body">
-              <input ng-model="module"></input>
-            <div>
+          </div>
+          <div class="row">
+            <div class="panel panel-default user-cluster-list">
+              <div class="panel-heading">
+                <h1 ng-cloak class="panel-title"> Cluster {{currentCluster.index}} <span ng-show="currentCluster.data"> | {{currentCluster.data.length}} results</span> </h1>
+              </div>
+              <div class="panel-body">
+                <ul ng-repeat="user in currentCluster.data">
+                  <li>{{user.name}}</li>
+                </ul>
+              <div>
+            </div>
           </div>
         </div>
       </div>
