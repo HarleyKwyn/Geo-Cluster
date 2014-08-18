@@ -1,7 +1,7 @@
 angular.module('cluster-data', [])
 .factory('kmeans', [ function(){
 
-  function Kmeans(data, k, coordsKey){
+  function Kmeans(data, k, tolerance, coordsKey){
     this.k = k;
     this.coordsKey = coordsKey ? coordsKey : 'coords';
     this.data = data;
@@ -10,7 +10,8 @@ angular.module('cluster-data', [])
     this.means = this.initMeans();
     this.assignments = this.assignCentroids();
     this.clusters = null;
-    this.changed = true;
+    this.changed = 0;
+    this.tolerance = tolerance;
     this.moveMeans();
   }
 
@@ -20,9 +21,9 @@ angular.module('cluster-data', [])
     this.extremes = this.getDataExtremes();
     this.ranges = this.getDataRanges();
     this.means = this.initMeans();
-    this.groups = this.assignCentroids();
-    this.clusters = this.getclusterArray();
-    this.run();
+    this.assignments = this.assignCentroids();
+    this.clusters = this.getClusterArray();
+    this.moveMeans();
   };
 
   Kmeans.prototype.getDataExtremes = function(){
@@ -109,54 +110,55 @@ angular.module('cluster-data', [])
 
   Kmeans.prototype.moveMeans = function(){
     var means = this.means;
+    var data = this.data;
     var assignments = this.assignments;
     var dataExtremes = this.extremes;
-    var dataRanges = this.ranges;
+    var dataRange = this.ranges;
     var sums = Array( means.length );
     var counts = Array( means.length );
-    console.log('moving means');
+
+    //init counter arrays
     for (var i = means.length - 1; i >= 0; i--) {
       counts[i] = 0;
       sums[i] = Array( means[i].length );
-      for (var dimension in means[i])
-      {
+      for (var dimension = means[i].length - 1; dimension >= 0; dimension--) {
         sums[i][dimension] = 0;
       }
     }
-
-    for (var point_index = assignments.length - 1; point_index >= 0; point_index--) {
+    //count!
+    for (var point_index in assignments) {
       var mean_index = assignments[point_index];
-      var point = data[point_index];
+      var point = this.coordsKey ? data[point_index][this.coordsKey] : data[point_index];
       var mean = means[mean_index];
 
       counts[mean_index]++;
+
       for (var dimension = mean.length - 1; dimension >= 0; dimension--) {
         sums[mean_index][dimension] += point[dimension];
       }
     }
-
-    for (var mean_index in sums){
-      if ( 0 === counts[mean_index] ){
+    //move
+    for (var mean_index = sums.length - 1; mean_index >= 0; mean_index--) {
+      if ( 0 === counts[mean_index] ) {
         sums[mean_index] = means[mean_index];
-        // Mean with no points
-
-        for (var dimension in dataExtremes){
-          sums[mean_index][dimension] = dataExtremes[dimension].min + ( Math.random() * dataRanges[dimension] );
+        for (var dimension = dataExtremes.length - 1; dimension >= 0; dimension--) {
+          sums[mean_index][dimension] = dataExtremes[dimension].min + ( Math.random() * dataRange[dimension] );
         }
-        continue; //skip subsequent for loop as no points in
+        continue;
       }
 
-      for (var dimension in sums[mean_index]){
-        sums[mean_index][dimension] /= counts[mean_index];
+      for (var i = sums[mean_index].length - 1; i >= 0; i--) {
+        sums[mean_index][i] /= counts[mean_index];
       }
     }
 
-    //one day replace this with Object.observer ;) ECMAScript6
-    if (means.toString() !== sums.toString()){
-      this.changed = true;
+    if (means.toString() !== sums.toString() && this.changed < this.tolerance){
+      this.changed++;
+      console.log("re-adjust");
       this.moveMeans();
     }else{
-      this.change = false;
+      console.log("equilibrium");
+      this.change = 0;
       this.clusters = this.getClusterArray();
     }
 
