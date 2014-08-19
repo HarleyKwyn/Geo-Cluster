@@ -42,7 +42,7 @@ angular.module('geo-cluster-graph',[])
 
           // define render function
           scope.render = function(data, zoom, centroids){
-            if(data.length === 0) return;
+            if(!data) return;
             // remove all previous items before render
             svg.selectAll("*").remove();
             //resize hack
