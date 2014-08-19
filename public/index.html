@@ -11,13 +11,18 @@
     <title>Geo-Cluster</title>
 
     <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="./scripts/common/angular-range-slider/angular.rangeSlider.css" rel="stylesheet"/>
+
     <link href="./css/index.css" rel="stylesheet"/>
 
 
     <script src="./node_modules/d3/d3.js"></script>
-    <script src="./node_modules/topojson/topojson.js"></script>    
+    <script src="./node_modules/topojson/topojson.js"></script> 
+    <script src="./node_modules/jQuery/tmp/jquery.js"></script>    
     <script src="./node_modules/angular/lib/angular.js"></script>
     <script src="./node_modules/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="./scripts/common/angular-range-slider/angular.rangeSlider.js"></script>
+
 
     <script src="./scripts/services/zipcode-service.js"></script>
     <script src="./scripts/services/user-data.js"></script>
@@ -44,20 +49,51 @@
         <div cluster-graph data="data" zoom="zoom" centroids="centroids" hover="showCluster"> </div >
         </div>
         <div class="col-md-4">
-          <div class = "row">
-            <div class="panel panel-default">
+          <div class="row">
+            <div class="panel panel-primary">
               <div class="panel-heading">
-                <h1 class="panel-title"> Controls go here</h1>
+                <h1 class="panel-title"> Options</h1>
               </div>
               <div class="panel-body">
-                <div ng-show="error" class="error">{{error}}</div>
-                <input ng-model="module"></input>
-                <div class="btn btn-info" ng-click="filter()">Filter by {{module}}</div>
+                <div ng-cloak ng-show="error" class="alert alert-danger">{{error}}</div>
+                <div ng-cloak ng-show="data" class="alert alert-info">{{data.length}} Results</div>
+              </div>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <p>Number of Clusters</p>
+                   <div range-slider min="0" max="10" model-max="k" pin-handle="min"></div>
+                </li>
+                <li class="list-group-item">
+                  <p> Module Name</p>
+                  <input ng-model="module"/>
+                </li>
+                <li class="list-group-item">
+                  <p>Start Date {{startDate}}</p>              
+                  <p class="input-group">
+                  <input type="text" class="form-control" datepicker-popup="yyyy/MM/dd" ng-model="startDate" is-open="startOpened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="startOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                  </span>
+                  </p>
+                </li>
+                <li class="list-group-item"> 
+                  <p>End Date {{endDate}}</p>             
+                  <p class="input-group">
+                  <input type="text" class="form-control" datepicker-popup="yyyy/MM/dd" ng-model="endDate" is-open="endOpened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="endOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                  </span>
+                  </p>
+                </li>
+              </ul>
+              <div class="panel-footer">
+                <div class="btn btn-info center" ng-click="recalculate()">Re-calculate</div>
+                <div
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="panel panel-default user-cluster-list">
+            <div class="panel panel-info user-cluster-list">
               <div class="panel-heading">
                 <h1 ng-cloak class="panel-title"> Cluster {{currentCluster.index}} <span ng-show="currentCluster.data"> | {{currentCluster.data.length}} results</span> </h1>
               </div>
@@ -76,4 +112,5 @@
   <footer>
 
   </footer>
+    <script src="./node_modules/angular-moment/angular-moment.js"></script>    
 </html>
