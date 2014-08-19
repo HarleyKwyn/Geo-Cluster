@@ -1,13 +1,11 @@
 body {
   margin-top: 70px;
 }
+.cluster {
+  opacity: 0.2;
+}
 .state {
   fill: none;
   stroke: #fff;
   stroke-linejoin: round;
-}
-.cluster {
-  fill: none;
-  stroke: #000;
-  opacity: 0.2;
 }
